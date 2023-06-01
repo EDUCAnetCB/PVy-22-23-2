@@ -1,0 +1,53 @@
+*, ::before, ::after {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.send {
+  width: 400px;
+  height: 260px;
+  font-size: 260px;
+  color: aliceblue;
+  background-color: blueviolet;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  top: calc((100vh - 260px) / 2);
+  left: calc((100vw - 400px) / 2);
+  cursor: pointer;
+  transition: width 1s, height 1s, top 1s, left 1s, font-size 2s;
+  animation: fade 2s, move 2s;
+}
+.send:hover {
+  width: 420px;
+  height: 280px;  
+  font-size: 280px;
+  top: calc((100vh - 280px) / 2);
+  left: calc((100vw - 420px) / 2);
+}
+@keyframes fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes move {
+  from {
+    left: calc((100vw - 420px) / 2);
+  }
+  to {
+    left: 12000px;
+  }
+}
+
+.send-animate {
+  animation: fade 2s, move 2s;
+  animation-fill-mode: forwards;
+}
